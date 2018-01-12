@@ -1,0 +1,75 @@
+1))
+cat tes | awk '{ print $1"\t" $2"\t" $5 }'
+cat tes | awk '{ if(NR <5) print $1"\t" $2"\t" $5 }'
+cat tes | awk '{ if(NR >7) print $1"\t" $2"\t" $5 }'
+2))cat tes | awk '{ if($2 == "M"){ print $0} }' > males.txt
+cat tes | awk '{ if($2 == "F"){ print $0} }' > females.txt
+3))
+BEGIN{
+	sum=0;
+}
+{
+	if(NR>1){
+		sum=0;
+	sum=$3+$4+$5;
+	print sum;
+	}
+}
+END{
+	
+}
+
+4))
+a)) BEGIN{
+	sum=0;
+	max=0;
+	average=0;
+}
+{
+	if(NR>1){
+		sum=0;
+	sum=$3+$4+$5;
+	average+=sum;
+	if(sum > max){
+		max=sum;
+		name=$1;
+	}
+	}
+}
+END{
+	print name
+}
+
+b))
+	BEGIN{
+	sum=0;
+	max=0;
+	average=0;
+	i=0;
+}
+{
+	if(NR>1){
+		sum=0;
+	sum=$3+$4+$5;
+	average+=sum;
+	arr[i, 0]=$1;
+	arr[i ,1]=$3+$4+$5;
+	i++;
+	}
+	
+}
+END{
+	print "Done"
+	average=(average/(NR-2));
+	print average;
+	for(j=1;j<NR;j++)
+	{
+		if(arr[j, 1]>average){
+			print arr[j, 0];
+
+		}
+	}
+}
+
+
+	
