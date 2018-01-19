@@ -54,15 +54,33 @@ function validateCountry(country) {
 }
 
 function validateEmail(email) {
+	if (email[0] == '@')
+		return false;
 	
+	for (var i = 1; i < email.length; ++i)
+	{
+		if (email[i] == '@')
+			return true;
+	}
+
+	return false;
 	// Check if the email is valid
 }
 
 function validateGender(gender) {
+	if (gender == 'Male' || gender == 'Female')
+		return true;
+	else return false;
 	// Check if any one of radio button is selected
 }
 
 function validateLanguage(lang) {
+	for (var i = 0; i < lang.length; ++i)
+	{
+			if (lang[i] == 'en' || lang[i] == 'tel' || lang[i] == 'hin')
+				return true;
+			else return false;
+	}
 	// lang -> list of langs selected
 	// Check if atleast one of the checkbox is checked
 }
