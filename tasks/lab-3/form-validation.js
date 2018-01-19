@@ -21,8 +21,8 @@ function validatePassword(password) {
 //	var up=parseInt(0);
 //	var lo=parseInt(0);
 
-	console.log(a);
-	if(a.length>=1 && /[A-Z]/.test(a) && /[a-z]/.test(a) && /[0-9]/.test(a) && "/[:^alnum:]"/test(a)) return true;
+	console.log(a + " password");
+	if(a.length>=1 && "/[A-Z]/".test(a) && "/[a-z]/".test(a) && "/[0-9]/".test(a) && "/[:^alnum:]"/test(a)) return true;
 	return false;
 	// password should contain alteast 1 uppercase letter, 1 lowercase letter, 1 digit and 1 special characters
 	// URL: https://account.cern.ch/account/Help/?kbid=020040
