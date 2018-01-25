@@ -29,7 +29,6 @@ function testUsername() {
 	username = "the";
 	if (!validateUsername(username))
 		testPassed++;
-	
 	return isAllTestPassed(4, testPassed, "username tests failed");
 }
 
@@ -38,27 +37,27 @@ function testPassword() {
 	let password = document.getElementById("password");
 	// Test 1
 	password.value = "123456789";
-	if (!validatePassword())
+	if (!validatePassword(password))
 		testPassed++;
 
 	// Test 2
 	password.value = "";
-	if (!validatePassword())
+	if (!validatePassword(password))
 		testPassed++;
 
 	// Test 3
 	password.value = "theuser";
-	if (!validatePassword())
+	if (!validatePassword(password))
 		testPassed++;
 
 	// Test 4
 	password.value = "SabLite";
-	if (!validatePassword())
+	if (!validatePassword(password))
 		testPassed++;
 
 	// Test 5
 	password.value = "$dlsf3_o";
-	if (validatePassword())
+	if (!validatePassword(password))
 		testPassed++;
 
 	return isAllTestPassed(5, testPassed, "password tests failed");
