@@ -17,7 +17,7 @@ function validateUsername(name) {
 	// It should not contain any whitespace
 }
 
-function validatePassword(passowrd) {
+function validatePassword(passwprd) {
 	var x = password;
 	var countlow=0;
 	var digit=0;
