@@ -72,7 +72,7 @@ function validateCountry(country) {
 }
 
 function validateEmail(email) {
-	var reg = new RegExp(".@..com");
+	var reg = new RegExp(".*@.*.com");
 	if(reg.test(email))
 		return true;	
 }
