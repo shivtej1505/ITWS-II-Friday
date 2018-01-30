@@ -56,7 +56,7 @@ function testPassword() {
 		testPassed++;
 
 	// Test 5
-	password = "$dlsf3_o";
+	password = "$dlsf3_O";
 	if (validatePassword(password))
 		testPassed++;
 
@@ -175,7 +175,7 @@ function testLang() {
 }
 
 function isAllTestPassed(totalTest, testPassed, msg) {
-	if (testPassed == totalTest)
+if (testPassed == totalTest)
 		return true;
 	else
 		console.log(msg + ". Out of " + totalTest +", only " + testPassed + " passed.");
