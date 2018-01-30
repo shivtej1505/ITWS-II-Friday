@@ -116,8 +116,8 @@ function checkForm() {
 	// parsing username from the form
 	let name = document.getElementById("username").value;
 
-	if (validateUsername(name) /* && validatePassword()  && validateCountry(country) && validateEmail(email)
-			&& validateGender(gender) && validateLanguage(langs) */) {
+	if (validateUsername(name) && validatePassword()  && validateCountry(country) && validateEmail(email)
+			&& validateGender(gender) && validateLanguage(langs) ) {
 		// If all validations are successful, then enable the submit button
 		document.getElementById("submitbtn").disabled = false;
 		msg.innerHTML = "Form contains no errors";
