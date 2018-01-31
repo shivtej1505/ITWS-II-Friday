@@ -155,22 +155,23 @@ function testLang() {
 	let lang = [];
 	if (!validateLanguage(lang))
 		testPassed++;
-
+		// console.log(testPassed);
 	// Test 2
 	lang = ["en", "hin", "tel"];
 	if (validateLanguage(lang))
 		testPassed++;
+		// console.log(testPassed);
 
 	// Test 3
 	lang = ["en", "tel"];
 	if (validateLanguage(lang))
 		testPassed++;
-
+		// console.log(testPassed);
 	// Test 4
 	lang = ["sk", "sps"];
 	if (!validateLanguage(lang))
 		testPassed++;	
-
+		// console.log(testPassed);
 	return isAllTestPassed(4, testPassed, "username tests failed");
 }
 
