@@ -12,28 +12,24 @@ function testUsername() {
 	let testPassed = 0;
 	// Test 1
 	let username = "1234sdklfdlks";
-	if (!validateUsername(username)){
+	if (!validateUsername(username))
 		testPassed++;
-//		console.log("test 1");
-	}
+
 	// Test 2
 	username = "";
-	if (!validateUsername(username)){
+	if (!validateUsername(username))
 		testPassed++;
-//		console.log("test 2");
-	}
+
 	// Test 3
 	username = "theuser";
-	if (validateUsername(username)){
+	if (validateUsername(username))
 		testPassed++;
-//		console.log("test 3");
-	}
+
 	// Test 4
 	username = "the";
-	if (!validateUsername(username)){
+	if (!validateUsername(username))
 		testPassed++;
-//		console.log("test 4");
-	}
+ 	
 	return isAllTestPassed(4, testPassed, "username tests failed");
 }
 
@@ -42,34 +38,29 @@ function testPassword() {
 	let password = document.getElementById("password");
 	// Test 1
 	password.value = "123456789";
-	if (!validatePassword()){
+	if (!validatePassword())
 		testPassed++;
-//		console.log("test 1");
-	}
+
 	// Test 2
 	password.value = "";
-	if (!validatePassword()){
+	if (!validatePassword())
 		testPassed++;
-//		console.log("test2");
-	}
+
 	// Test 3
 	password.value = "theuser";
-	if (!validatePassword()){
+	if (!validatePassword())
 		testPassed++;
-//		console.log("test3");
-	}
+
 	// Test 4
 	password.value = "SabLite";
-	if (!validatePassword()){
+	if (!validatePassword())
 		testPassed++;
-//		console.log("test4");		
-	}
+
 	// Test 5
 	password.value = "$dlsf3_o";
-	if (!validatePassword()){//changed the not 
+	if (!validatePassword())
 		testPassed++;
-//		console.log("test5");
-	}
+
 	return isAllTestPassed(5, testPassed, "password tests failed");
 }
 
@@ -78,16 +69,14 @@ function testCountry() {
 	let testPassed = 0;
 	// Test 1
 	let country = "uganda";
-	if (!validateCountry(country)){
+	if (!validateCountry(country))
 		testPassed++;
-//		console.log("test1");
-	}
+
 	// Test 2
 	country = "AF";
-	if (validateCountry(country)){
+	if (validateCountry(country))
 		testPassed++;
-//		console.log("test2");
-	}
+	
 	// Test 3
 	country = "DZ";
 	if (validateCountry(country))
@@ -95,10 +84,9 @@ function testCountry() {
 
 	// Test 4
 	country = "";
-	if (!validateCountry(country)){
+	if (!validateCountry(country))
 		testPassed++;
-//		console.log("test4");
-	}
+
 	return isAllTestPassed(4, testPassed, "country tests failed");	
 }
 
@@ -106,39 +94,34 @@ function testEmail() {
 	let testPassed = 0;
 	// Test 1
 	let email = "asdklfj";
-	if (!validateEmail(email)){
+	if (!validateEmail(email))
 		testPassed++;
-//		console.log("test1");
-	}
 
+	// Test 2
 	email = "";
-	if (!validateEmail(email)){
+	if (!validateEmail(email))
 		testPassed++;
-	}
 	
-
+	// Test 3
 	email = "a@b.com";
-	if (validateEmail(email)){
+	if (validateEmail(email))
 		testPassed++;
-	}
-
-	email = "a@b";
-	if (!validateEmail(email)){
-		testPassed++;
-//		console.log("test4");
-	}
-
-	email = "a@.com";
-	if (!validateEmail(email)){
-		testPassed++;
-//		console.log("test5");
-	}
-
-	email = "@gmail.com";
-	if (!validateEmail(email)){
-		testPassed++;
-	}
 	
+	// Test 4
+	email = "a@b";
+	if (!validateEmail(email))
+		testPassed++;
+
+	// Test 5
+	email = "a@.com";
+	if (!validateEmail(email))
+		testPassed++;
+
+	// Test 6
+	email = "@gmail.com";
+	if (!validateEmail(email))
+		testPassed++;
+
 	return isAllTestPassed(6, testPassed, "email tests failed");	
 }
 
@@ -171,29 +154,25 @@ function testLang() {
 	let testPassed = 0;
 	// Test 1
 	let lang = [];
-	if (!validateLanguage(lang)){
+	if (!validateLanguage(lang))
 		testPassed++;
-//		console.log("test1");
-	}
+
 	// Test 2
 	lang = ["en", "hin", "tel"];
-	if (validateLanguage(lang)){
+	if (validateLanguage(lang))
 		testPassed++;
-//		console.log("test2");
-	}
+
 	// Test 3
 	lang = ["en", "tel"];
-	if (validateLanguage(lang)){
+	if (validateLanguage(lang))
 		testPassed++;
-//		console.log("test3");
-	}
+
 	// Test 4
 	lang = ["sk", "sps"];
-	if (!validateLanguage(lang)){
+	if (!validateLanguage(lang))
 		testPassed++;	
-//		console.log("test4");
-	}
-	return isAllTestPassed(4, testPassed, "language tests failed");
+
+	return isAllTestPassed(4, testPassed, "username tests failed");
 }
 
 function isAllTestPassed(totalTest, testPassed, msg) {
