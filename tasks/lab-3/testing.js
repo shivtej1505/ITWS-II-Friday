@@ -34,30 +34,39 @@ function testUsername() {
 
 function testPassword() {
 	let testPassed = 0;
-	let password = document.getElementById("password");
 	// Test 1
 	password.value = "123456789";
+	let password = "123456789";
 	if (!validatePassword(password))
 		testPassed++;
 
 	// Test 2
 	password.value = "";
+=======
+	password = "";
 	if (!validatePassword(password))
 		testPassed++;
 
 	// Test 3
 	password.value = "theuser";
+=======
+	password = "theuser";
 	if (!validatePassword(password))
 		testPassed++;
 
 	// Test 4
 	password.value = "SabLite";
+=======
+	password = "SabLite";
 	if (!validatePassword(password))
 		testPassed++;
 
 	// Test 5
 	password.value = "$dlsf3_o";
 	if (!validatePassword(password))
+=======
+	password = "$dlsf3_O";
+	if (validatePassword(password))
 		testPassed++;
 
 	return isAllTestPassed(5, testPassed, "password tests failed");
@@ -175,7 +184,7 @@ function testLang() {
 }
 
 function isAllTestPassed(totalTest, testPassed, msg) {
-	if (testPassed == totalTest)
+if (testPassed == totalTest)
 		return true;
 	else
 		console.log(msg + ". Out of " + totalTest +", only " + testPassed + " passed.");
