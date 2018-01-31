@@ -10,23 +10,26 @@ function validatePassword(password) {
 	// password should contain alteast 1 uppercase letter, 1 lowercase letter, 1 digit and 1 special characters
 	// URL: https://account.cern.ch/account/Help/?kbid=020040
 	var count = 0;
-	var x = password;
-	var ra = /[a-z]/;
-	var rb = /[A-Z]/;
-	var rc = /[0-9]/;
-	var rd = /{~,!,@,#,$,%,^,&,*}/;
-	var y = ra.test(x);
-	if(y=="true")
+//	var x = password;
+//	var ra = /[a-z]/;
+//	var rb = /[A-Z]/;
+//	var rc = /[0-9]/;
+//	var rd = /{~,!,@,#,$,%,^,&,*}/;
+//	var y = ra.test(x);
+//	console.log(y);
+//	console.log(/[a-z]/.test(password));
+	if(/[a-z]/.test(password)==true)
 		count++;
-	var y = rb.test(x);
-	if(y=="true")
+//	var y = rb.test(x);
+	if(/[A-Z]/.test(password)==true)
 		count++;
-	var y = rc.test(x);
-	if(y=="true")
+//	var y = rc.test(x);
+	if(/[0-9]/.test(password)==true)
 		count++;
-	var y = rd.test(x);
-	if(y=="true")
+//	var y = rd.test(x);
+	if(/[~!@#$%^&*]/.test(password)==true)
 		count++;
+//	console.log(count);
 	if(count==4)
 		return true;
 	else
@@ -46,14 +49,14 @@ function validateCountry(country) {
 
 function validateEmail(email) {
 	// Check if the email is valid
-	var ra = /@/;
-	var rb = /\.com/;
+	var ra = /[a-z]@[a-z]/;
+	var rb = /\.com$/;
 	var count = 0;
 	var y = ra.test(email);
-	if(y=="true")
+	if(y==true)
 		count++;
 	var y = rb.test(email);
-	if(y=="true")
+	if(y==true)
 		count++;
 	if(count==2)
 		return true;
@@ -74,19 +77,19 @@ function validateGender(gender) {
 function validateLanguage(langs) {
 	// lang -> list of langs selected
 	// Check if atleast one of the checkbox is checked
-	/*	if(lang == "en")
+	/*	if(langs == "en")
 		return true;
-		else if(lang == "hin") 
+		else if(langs == "hin") 
 		return true;
-		else if(lang == "tel")
+		else if(langs == "tel")
 		return true;
-		else if(lang == "en","hin","tel")
+		else if(langs == "en","hin","tel")
 		return true;
-		else if(lang == "hin","en") 
+		else if(langs == "hin","en") 
 		return true;
-		else if(lang == "tel","en")
+		else if(langs == "tel","en")
 		return true;
-		else if(lang == "tel","hin")
+		else if(langs == "tel","hin")
 		return true;
 		else
 		return false;*/
