@@ -1,0 +1,13 @@
+       AWK
+
+3.1a awk '{print $1" "$2" "$5}' awk.txt 
+3.1b cat awk.txt | awk '{if(NR<5) {print $1, $2, $5}}' 
+3.1c cat awk.txt | awk '{}END{print $1, $2, $5}}'
+
+3.2 cat awk.txt | awk '{if($2=="M") {print $0 > "male.txt"} else if($2=="F") {print $0 > "female.txt"}}' 
+
+3.3 cat awk.txt | awk -v sum=0 'BEGIN {sum=0} {if(NR!=1){sum=$3 + $4 + $5 ; print $1, sum} }'
+
+3.4 cat awk.txt | awk -v max=0 -v sum=0 -v avg=0 -v topper="" '{if(NR!=1){sum=$3+$4+$5}{avg+=sum}{arr[$1]=sum}{if(sum>max){max=sum;topper=$1}}} ; END { {avg=avg/(NR-1)} {print "max="max, "avg="avg, "topper="topper}{for(i in arr){if(arr[i]>avg) {print i}}} }'
+
+3.5 cat awk.txt | awk -v max=0 -v min=10000 -v avg=0 -v sum=0 'BEGIN{print "*** Grade Report for the ABC course ***"} {if(NR!=1){{sum=0}{sum=$3+$4+$5}{if(sum>95){print $1, "A"} else if(sum>90){print $1, "A-"} else if(sum>85) {print $1, "B"} else if(sum>80){print $1, "B-"} else if(sum>75) {print $1, "C"} else if(sum>70){print $1, "C-"} else if(sum>60){print $1, "D"} else {print $1, "F"}} {avg=avg+sum}{if(sum>max) {max=sum}}{if(sum<min) {min=sum}}}} END {{print "No of students"(NR-1), "MAX="max, "MIN="min, "Average="avg/(NR-1)} {print "*** End of Grade Report***"}}'

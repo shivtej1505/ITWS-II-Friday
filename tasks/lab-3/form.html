@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <title>User Registration Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+	
+	<h1>Registration Form</h1>
+	<p style="color: red;font-weight: bold;" id="msg"></p>
+	
+	<form name="registration">
+		<div class="form-group">
+			<label for="username">Username</label>
+			<input type="text" id="username"/>
+		</div>
+
+		<div class="form-group">
+			<label for="passid">Password:</label>
+			<input type="password" id="password"/>
+		</div>
+
+		<div class="form-group">
+			<label for="country">Country:</label>
+			<select id="country">
+				<option value="AF">Australia</option>
+				<option value="AL">Canada</option>
+				<option value="DZ">India</option>
+				<option value="AS">Russia</option>
+				<option value="AD">USA</option>
+			</select>
+		</div>
+
+		<div class="form-group">
+			<label for="email">Email:</label>
+			<input type="text" id="email"/>
+		</div>
+
+		<div class="form-group">
+			<label id="gender">Gender:</label>
+			<input type="radio" name="gender" id="male" value="Male">Male</input>
+			<input type="radio" name="gender" id="female" value="Female">Female</input>
+		</div>
+
+		<div class="form-group">
+			<label>Language:</label>
+			<input type="checkbox" id="en" value="en"/><span>English</span>
+			<input type="checkbox" id="hin" value="hin" /><span>Hindi</span>
+			<input type="checkbox" id="tel" value="tel" /><span>Telegu</span>
+		</div>
+		
+		<input  class="btn btn-default" type="submit" value="Submit" id="submitbtn" />
+	</form>
+	<br>
+	<button class="btn btn-warning" onclick="testNow()">Test</button>
+	<p id="test_result"></p>
+	</div>
+<script src="form-validation.js"></script>
+<script src="testing.js"></script>
+</body>
+</html>
