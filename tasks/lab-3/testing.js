@@ -56,7 +56,7 @@ function testPassword() {
 		testPassed++;
 
 	// Test 5
-	password = "$dlsf3_O";
+	password = "$dlSf3_o";
 	if (validatePassword(password))
 		testPassed++;
 
@@ -93,9 +93,10 @@ function testEmail() {
 	let testPassed = 0;
 	// Test 1
 	let email = "asdklfj";
+	
 	if (!validateEmail(email))
 		testPassed++;
-
+	
 	// Test 2
 	email = "";
 	if (!validateEmail(email))
@@ -110,17 +111,17 @@ function testEmail() {
 	email = "a@b";
 	if (!validateEmail(email))
 		testPassed++;
-
+	
 	// Test 5
 	email = "a@.com";
 	if (!validateEmail(email))
 		testPassed++;
-
+	
 	// Test 6
 	email = "@gmail.com";
 	if (!validateEmail(email))
 		testPassed++;
-
+	
 	return isAllTestPassed(6, testPassed, "email tests failed");	
 }
 
@@ -175,7 +176,7 @@ function testLang() {
 }
 
 function isAllTestPassed(totalTest, testPassed, msg) {
-if (testPassed == totalTest)
+	if (testPassed == totalTest)
 		return true;
 	else
 		console.log(msg + ". Out of " + totalTest +", only " + testPassed + " passed.");
@@ -184,4 +185,4 @@ if (testPassed == totalTest)
 
 function isSubmitDisabled() {
 	return document.getElementById('submitbtn').disabled;
-}
+} 
