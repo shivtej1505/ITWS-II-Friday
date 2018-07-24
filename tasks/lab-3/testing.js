@@ -29,33 +29,42 @@ function testUsername() {
 	username = "the";
 	if (!validateUsername(username))
 		testPassed++;
-	
 	return isAllTestPassed(4, testPassed, "username tests failed");
 }
 
 function testPassword() {
 	let testPassed = 0;
 	// Test 1
+	password.value = "123456789";
 	let password = "123456789";
 	if (!validatePassword(password))
 		testPassed++;
 
 	// Test 2
+	password.value = "";
+=======
 	password = "";
 	if (!validatePassword(password))
 		testPassed++;
 
 	// Test 3
+	password.value = "theuser";
+=======
 	password = "theuser";
 	if (!validatePassword(password))
 		testPassed++;
 
 	// Test 4
+	password.value = "SabLite";
+=======
 	password = "SabLite";
 	if (!validatePassword(password))
 		testPassed++;
 
 	// Test 5
+	password.value = "$dlsf3_o";
+	if (!validatePassword(password))
+=======
 	password = "$dlsf3_O";
 	if (validatePassword(password))
 		testPassed++;
